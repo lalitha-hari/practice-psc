@@ -1,0 +1,16 @@
+Feature: To-Do List Management
+
+  Scenario: User adds a task to the to-do list
+    Given the user is on the to-do list application page
+    When the user adds a task with description "<task_description>"
+    Then the task "<task_description>" should appear in the to-do list
+
+  Scenario: User removes a task from the to-do list
+    Given the user has tasks in the to-do list
+    When the user removes a task with description "<task_description>"
+    Then the task "<task_description>" should be removed from the to-do list
+
+  Scenario: User marks a task as completed in the to-do list
+    Given the user has tasks in the to-do list
+    When the user marks the task with description "<task_description>" as completed
+    Then the task "<task_description>" should be marked as completed and displayed in the completed tasks section

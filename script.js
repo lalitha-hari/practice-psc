@@ -1,12 +1,9 @@
-function addTask() {
-    var taskInput = document.getElementById("taskInput");
-    var taskDescription = taskInput.value.trim();
-    if (taskDescription !== "") {
+function addTask(taskDescription) {
+    if (taskDescription.trim() !== "") { // Check if task description is not empty after trimming leading and trailing spaces
         var taskList = document.getElementById("taskList");
         var newTask = document.createElement("li");
-        newTask.innerHTML = `<input type="checkbox" onchange="toggleCompletion(this)"> ${taskDescription} <button onclick="removeTask(this)">Remove</button>`;
+        newTask.innerHTML = `<input type="checkbox" onchange="toggleCompletion(this)"> ${taskDescription.trim()} <button onclick="removeTask(this)">Remove</button>`; // Trim leading and trailing spaces from task description
         taskList.appendChild(newTask);
-        taskInput.value = "";
     }
 }
 
